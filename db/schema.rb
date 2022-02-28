@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_27_080139) do
+ActiveRecord::Schema.define(version: 2022_02_28_003110) do
 
   create_table "cities", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "name"
@@ -29,6 +29,19 @@ ActiveRecord::Schema.define(version: 2022_02_27_080139) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "weather_forecasts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.float "temp_max"
+    t.float "temp_min"
+    t.float "temp_feel"
+    t.integer "weather_id"
+    t.float "rainfall"
+    t.datetime "target_date"
+    t.datetime "aquired_at"
+    t.integer "city_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

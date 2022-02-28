@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  temp_max: 1.5
+  temp_min: 1.5
+  temp_feel: 1.5
+  weather_id: 1
+  rainfall: 1.5
+  target_date: 2022-02-28 01:01:31
+  aquired_at: 2022-02-28 01:01:31
+  city_id: 1
+
+two:
+  temp_max: 1.5
+  temp_min: 1.5
+  temp_feel: 1.5
+  weather_id: 1
+  rainfall: 1.5
+  target_date: 2022-02-28 01:01:31
+  aquired_at: 2022-02-28 01:01:31
+  city_id: 1
