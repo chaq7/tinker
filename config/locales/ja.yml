@@ -1,4 +1,8 @@
-en:
+ja:
   activerecord:
     models:
       user: 'ユーザー'
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      weather: "%m/%d %H:%M"

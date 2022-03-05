@@ -12,7 +12,7 @@ class WeatherForecastsController < ApplicationController
     city_ids = params[:user][:city_users].compact.reject(&:empty?)
     CityUser.update_setting_cities(@user.id, city_ids)
 
-    redirect_to root_path, notice: "更新しました。"
+    redirect_to weather_forecasts_path, notice: "地域設定を更新しました。"
   end
 
 end
