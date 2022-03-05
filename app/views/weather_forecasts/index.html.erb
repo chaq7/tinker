@@ -3,9 +3,17 @@
 <%= link_to "HOME", root_path %> <!-- HOME画面に移行する -->
 <%= link_to "地域設定変更", edit_weather_forecasts_path %> <!-- 地域設定変更画面に移行する -->
 
-<% my_city_weather_forecasts(@user.id).each do |fc| %>
-  <p><%= [fc.id, fc.weather_id] %></p>
-<% end %>
+<table border="2" width="600" cellspacing="0" cellpadding="5" bordercolor="#333333">
+  <% my_city_weather_forecasts(@user.id).each do |fc| %>
+    <tr>
+      <th align="left">
+        <%= "#{ fc.city.name}：#{I18n.l(fc.target_date, format: :weather)} | 天気：" %>
+        <%= image_tag fc.ditsplay_weather_image, width: "25" %>
+        <%= " | 気温：#{fc.temp_max}℃ | 降水確率：#{fc.display_rainfall}" %></th>
+    </tr>
+  <% end %>
+</table>
+
 
 <%= link_to "HOME", root_path %> <!-- HOME画面に移行する -->
 <%= link_to "地域設定変更", edit_weather_forecasts_path %> <!-- 地域設定変更画面に移行する -->
