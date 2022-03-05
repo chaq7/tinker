@@ -4,9 +4,8 @@
   <!-- ユーザーがログインしていた時の処理 -->
 
   <h4> メールアドレス： <%= current_user.email %> </h4>
-  <%= link_to "天気予報", weather_forecast_index_path %> <!-- 天気予報画面に移行する -->
+  <%= link_to "天気予報", weather_forecasts_path %> <!-- 天気予報画面に移行する -->
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> <!-- ログアウトをする -->
-  <%= link_to "プロフィール編集", user_profiles_edit_path %> <!-- プロフィール編集をする -->
   <%= link_to "アカウント設定", edit_user_registration_path %> <!-- アカウント設定をする -->
 <% else %>
   <!-- ユーザーがログインしていなかった時の処理 -->

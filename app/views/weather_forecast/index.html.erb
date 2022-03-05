@@ -1,7 +1,0 @@
-<h1>天気予報</h1>
-
-<% specify_city_weather_forecasts(1).each do |fc| %>
-  <p><%= [fc.city_id, fc.target_date] %></p>
-<% end %>
-
-<%= link_to "HOME", root_path %> <!-- HOME画面に移行する -->
