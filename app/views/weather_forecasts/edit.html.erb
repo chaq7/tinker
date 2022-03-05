@@ -1,10 +1,10 @@
-<h2><%= @user.model_name.human %>データ変更</h2>
+<h2>天気予報地域登録</h2>
 
 <%= form_with model: @user, url: weather_forecasts_path do |f| %>
 
   <div class = 'field'>
-    <%= f.label :city, '天気予報地点登録' %><br />
-    <%= f.collection_check_boxes :city_users, City.all_id_and_name, :id, :name do |city| %>
+    <%= f.label :city, '地域' %><br />
+    <%= f.collection_check_boxes :city_users, City.all_id_and_name, :id, :name, include_hidden: false do |city| %>
       <%= city.check_box %>
       <%= city.text %>
     <% end %>
@@ -15,4 +15,4 @@
   </div>
 <% end %>
 
-<%= link_to "戻る", :back %>
+<%= link_to "天気予報画面に戻る", weather_forecasts_path %><br /> <!-- 天気予報画面に移行する -->
