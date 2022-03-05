@@ -6,6 +6,7 @@
   <h4> メールアドレス： <%= current_user.email %> </h4>
   <%= link_to "天気予報", weather_forecast_index_path %> <!-- 天気予報画面に移行する -->
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> <!-- ログアウトをする -->
+  <%= link_to "ユーザーデータ編集", edit_user_registration_path %> <!-- ユーザーデータ編集をする -->
 <% else %>
   <!-- ユーザーがログインしていなかった時の処理 -->
   <h2> 現在ログインしていません </h2>
