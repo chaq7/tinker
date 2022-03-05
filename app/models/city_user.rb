@@ -9,4 +9,8 @@ class CityUser < ApplicationRecord
     self.where.not(user_id: user_id, city_id: city_ids).delete_all
   end
 
+  def self.my_city_ids(user_id)
+    self.where(user_id: user_id).pluck(:city_id)
+  end
+
 end

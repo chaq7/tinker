@@ -1,0 +1,11 @@
+<h1>天気予報</h1>
+
+<%= link_to "HOME", root_path %> <!-- HOME画面に移行する -->
+<%= link_to "地域設定変更", edit_weather_forecasts_path %> <!-- 地域設定変更画面に移行する -->
+
+<% my_city_weather_forecasts(@user.id).each do |fc| %>
+  <p><%= [fc.id, fc.weather_id] %></p>
+<% end %>
+
+<%= link_to "HOME", root_path %> <!-- HOME画面に移行する -->
+<%= link_to "地域設定変更", edit_weather_forecasts_path %> <!-- 地域設定変更画面に移行する -->
