@@ -1,0 +1,18 @@
+<h1>UserProfiles#edit</h1>
+<p>Find me in app/views/user_profiles/edit.html.erb</p>
+
+<h2><%= @user.model_name.human %>データ変更</h2>
+
+<%= form_for(@user, url: user_profiles_update_path, html: { method: :put }) do |f| %>
+
+  <div class = 'field'>
+    <%= f.label :city, '居住地' %><br />
+    <%= f.select :city, City.all_name_and_id, autocomplete: "city" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "更新" %>
+  </div>
+<% end %>
+
+<%= link_to "戻る", :back %>
