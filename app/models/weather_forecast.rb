@@ -1,7 +1,8 @@
 class WeatherForecast < ApplicationRecord
   belongs_to :city
 
-  WEATHER_IMAGE_DIR= "weathers/"
+  WEATHER_IMAGE_DIR = "weathers/"
+  PNG_FILE_FORMAT = ".png"
 
   scope :recent_target_date, lambda {
     order(target_date: :asc)
@@ -29,7 +30,7 @@ class WeatherForecast < ApplicationRecord
   private
 
   def select_weather_image
-    WEATHER_IMAGE_DIR + weather_type + ".png"
+    WEATHER_IMAGE_DIR + weather_type + PNG_FILE_FORMAT
   end
 
   def weather_type
