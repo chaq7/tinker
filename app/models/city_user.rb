@@ -1,0 +1,2 @@
+class CityUser < ApplicationRecord
+end
