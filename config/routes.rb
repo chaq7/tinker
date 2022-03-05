@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   get 'weather_forecast/index'
   get 'user/profiles/edit', to: 'user_profiles#edit'
-  put 'user/profiles/update', to: 'user_profiles#update'
+  patch 'user/profiles/update', to: 'user_profiles#update'
 end
