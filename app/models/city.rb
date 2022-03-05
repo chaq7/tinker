@@ -3,11 +3,7 @@ class City < ApplicationRecord
   has_many :city_user
   has_many :user, through: :city_user
 
-  def self.all_name_and_id
-    cities = []
-    City.find_each do |city|
-      cities << [city.name, city.id]
-    end
-    cities
+  def self.all_id_and_name
+    City.select('id', 'name').all
   end
 end

@@ -3,11 +3,14 @@
 
 <h2><%= @user.model_name.human %>データ変更</h2>
 
-<%= form_for(@user, url: user_profiles_update_path, html: { method: :put }) do |f| %>
+<%= form_with model: @user, url: user_profiles_update_path do |f| %>
 
   <div class = 'field'>
-    <%= f.label :city, '居住地' %><br />
-    <%= f.select :city, City.all_name_and_id, autocomplete: "city" %>
+    <%= f.label :city, '天気予報地点登録' %><br />
+    <%= f.collection_check_boxes :city_users, City.all_id_and_name, :id, :name do |city| %>
+      <%= city.check_box %>
+      <%= city.text %>
+    <% end %>
   </div>
 
   <div class="actions">

@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_one :city_user
-  has_one :city, through: :city_user
+  has_many :city_users
+  has_many :city, through: :city_users
+  accepts_nested_attributes_for :city_users, allow_destroy: true
 
 end
