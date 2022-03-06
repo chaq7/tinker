@@ -4,6 +4,16 @@ class WeatherForecast < ApplicationRecord
   WEATHER_IMAGE_DIR = "weathers/"
   PNG_FILE_FORMAT = ".png"
 
+  with_options numericality: true do
+    validates :temp_max, presence: true
+    validates :temp_min, presence: true
+    validates :temp_feel, presence: true
+    validates :rainfall, allow_nil: true
+  end
+  validates :target_date, presence: true
+  validates :aquired_at, presence: true
+  validates :city_id, presence: true, numericality: { only_integer: true }
+
   scope :recent_target_date, lambda {
     order(target_date: :asc)
   }
