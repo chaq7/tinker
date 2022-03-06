@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 * Ruby version
 
-* System dependencies
+Ruby 2.7.2
 
-* Configuration
+* Ruby on Rails
 
-* Database creation
+Rails 6.1.4.6
 
-* Database initialization
+* Server
 
-* How to run the test suite
+AWS
 
-* Services (job queues, cache servers, search engines, etc.)
+* Database
 
-* Deployment instructions
+RDS(mysql2)
 
-* ...
