@@ -7,7 +7,7 @@
   <% my_city_weather_forecasts(@user.id).each do |fc| %>
     <tr>
       <th align="left">
-        <%= "#{ fc.city.name}：#{I18n.l(fc.target_date, format: :weather)} | 天気：" %>
+        <%= "#{ fc.city.name}：#{I18n.l(fc.target_date, format: :short)} | 天気：" %>
         <%= image_tag fc.ditsplay_weather_image, width: "25" %>
         <%= " | 気温：#{fc.temp_max}℃ | 降水確率：#{fc.display_rainfall}" %></th>
     </tr>
