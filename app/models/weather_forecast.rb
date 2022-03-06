@@ -12,7 +12,7 @@ class WeatherForecast < ApplicationRecord
   }
 
   def self.my_weather_forecasts(city_ids)
-    self.where(city_id: city_ids).all.city_id_asc.recent_target_date
+    self.where(city_id: city_ids).city_id_asc.recent_target_date.eager_load(:city).all
   end
 
   def ditsplay_weather_image

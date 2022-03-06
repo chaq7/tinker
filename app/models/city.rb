@@ -4,6 +4,6 @@ class City < ApplicationRecord
   has_many :user, through: :city_user
 
   def self.all_id_and_name
-    City.select('id', 'name').all
+    City.select('id', 'name').includes(:city_user).all
   end
 end
