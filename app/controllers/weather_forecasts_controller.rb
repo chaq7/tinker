@@ -23,7 +23,7 @@ class WeatherForecastsController < ApplicationController
   private
 
   def set_my_city_ids
-    @my_city_ids = CityUser.where(user_id: @user.id).pluck(:city_id)
+    @my_city_ids = CityUser.where(user_id: @user.id).pluck(:city_id).uniq
   end
 
 end

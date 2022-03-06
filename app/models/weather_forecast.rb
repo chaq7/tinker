@@ -21,12 +21,12 @@ class WeatherForecast < ApplicationRecord
     order(city_id: :asc)
   }
 
-  def self.my_weather_forecasts(city_ids)
+  def self.target_cities(city_ids)
     self.where(city_id: city_ids).city_id_asc.recent_target_date.eager_load(:city).all
   end
 
   def ditsplay_weather_image
-    select_weather_image
+    weather_image
   end
 
   def display_rainfall
@@ -39,7 +39,7 @@ class WeatherForecast < ApplicationRecord
 
   private
 
-  def select_weather_image
+  def weather_image
     WEATHER_IMAGE_DIR + weather_type + PNG_FILE_FORMAT
   end
 
