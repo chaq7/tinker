@@ -1,10 +1,10 @@
 <h2>天気予報地域登録</h2>
 
-<%= form_with model: @user, url: weather_forecasts_path do |f| %>
+<%= form_with model: @city_users, url: weather_forecasts_path, method: :put do |f| %>
 
   <div class = 'field'>
     <%= f.label :city, '地域' %><br />
-    <%= f.collection_check_boxes :city_users, City.all_id_and_name, :id, :name, include_hidden: false do |city| %>
+    <%= f.collection_check_boxes :city_ids, @all_cities, :id, :name, include_hidden: false do |city| %>
       <%= city.check_box checked: @my_city_ids.include?(city.value) %>
       <%= city.text %>
     <% end %>
